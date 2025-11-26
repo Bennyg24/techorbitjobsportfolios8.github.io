@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI/UX Designer Portfolio - Emeka Uchenna</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* --- UI/UX Design: Vibrant, Modern, User-Centric --- */
+        :root {
+            --uiux-primary: #8A2BE2; /* Amethyst */
+            --uiux-secondary: #FFD700; /* Gold */
+            --uiux-accent: #00CED1; /* Dark Turquoise */
+            --uiux-background: #F8F8F8;
+            --uiux-text: #333;
+            --uiux-light-text: #555;
+            --uiux-card-bg: white;
+            --uiux-shadow: rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--uiux-text);
+            background: var(--uiux-background);
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--uiux-primary);
+            transition: all 0.3s ease;
+        }
+        a:hover {
+            color: var(--uiux-accent);
+        }
+
+        /* --- Global Elements --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.8em;
+            color: var(--uiux-primary);
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--uiux-accent);
+            border-radius: 2px;
+        }
+
+        /* --- Navigation Bar --- */
+        .uiux-nav {
+            background: var(--uiux-card-bg);
+            padding: 15px 0;
+            box-shadow: 0 2px 10px var(--uiux-shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .uiux-nav .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .uiux-nav .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8em;
+            font-weight: 700;
+            color: var(--uiux-primary);
+        }
+        .uiux-nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+        .uiux-nav ul li a {
+            margin-left: 35px;
+            font-weight: 600;
+            color: var(--uiux-light-text);
+            font-size: 1.1em;
+        }
+        .uiux-nav ul li a:hover {
+            color: var(--uiux-primary);
+            transform: translateY(-2px);
+        }
+
+        /* --- Header/Hero Section --- */
+        .uiux-header {
+            background: linear-gradient(135deg, var(--uiux-primary) 0%, #A276E8 100%);
+            padding: 100px 0 60px;
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px var(--uiux-shadow);
+        }
+        .uiux-header::before { /* Decorative overlay */
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="40" fill="%23FFFFFF22" opacity="0.1"/><circle cx="20" cy="80" r="15" fill="%23FFFFFF22" opacity="0.1"/><circle cx="80" cy="20" r="10" fill="%23FFFFFF22" opacity="0.1"/></svg>') repeat;
+            opacity: 0.15;
+            z-index: 1;
+        }
+        .uiux-header .content-wrapper {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .profile-img-container {
+            margin-bottom: 25px;
+            position: relative;
+            display: inline-block; /* For centering */
+        }
+        .profile-img-container img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 6px solid var(--uiux-secondary); /* Gold border */
+            box-shadow: 0 0 0 8px var(--uiux-accent), 0 8px 20px rgba(0, 0, 0, 0.3); /* Turquoise glow + shadow */
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .profile-img-container img:hover {
+            transform: scale(1.05) rotate(2deg);
+        }
+
+        #dynamicGreeting {
+            font-size: 1.4em;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--uiux-secondary);
+            text-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .uiux-header h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.8em;
+            margin-bottom: 10px;
+            text-shadow: 0 3px 8px rgba(0,0,0,0.3);
+            line-height: 1.1;
+        }
+        .uiux-header h2 {
+            font-size: 1.8em;
+            font-weight: 400;
+            color: var(--uiux-accent);
+            margin-bottom: 30px;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+        }
+        .uiux-header p {
+            font-size: 1.1em;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            line-height: 1.8;
+        }
+
+        .uiux-btn {
+            display: inline-block;
+            background: var(--uiux-secondary);
+            color: var(--uiux-primary);
+            padding: 15px 40px;
+            border-radius: 50px; /* Pill shape */
+            font-weight: 700;
+            font-size: 1.1em;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .uiux-btn:hover {
+            background: var(--uiux-accent);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* --- Skills Section --- */
+        .uiux-section {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .uiux-skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        .uiux-skill-card {
+            background: var(--uiux-card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px var(--uiux-shadow);
+            text-align: left;
+            border-left: 5px solid var(--uiux-primary);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .uiux-skill-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+        .uiux-skill-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--uiux-primary);
+            font-size: 1.6em;
+            margin-bottom: 15px;
+        }
+        .uiux-skill-card ul {
+            list-style: none;
+            padding: 0;
+        }
+        .uiux-skill-card ul li {
+            margin-bottom: 8px;
+            color: var(--uiux-light-text);
+            display: flex;
+            align-items: center;
+        }
+        .uiux-skill-card ul li::before {
+            content: '✓';
+            color: var(--uiux-accent);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* --- Projects Section --- */
+        .uiux-projects-section {
+            background: var(--uiux-background);
+        }
+        .uiux-project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+        .uiux-project-card {
+            background: var(--uiux-card-bg);
+            border-radius: 12px;
+            box-shadow: 0 6px 20px var(--uiux-shadow);
+            overflow: hidden;
+            text-align: left;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .uiux-project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+        }
+        .uiux-project-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+            border-bottom: 3px solid var(--uiux-accent);
+        }
+        .uiux-project-content {
+            padding: 25px;
+        }
+        .uiux-project-content h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--uiux-primary);
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+        .uiux-project-content p {
+            color: var(--uiux-light-text);
+            margin-bottom: 20px;
+        }
+        .uiux-project-links a {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-right: 15px;
+            border-radius: 8px;
+            font-weight: 600;
+            background: var(--uiux-primary);
+            color: white;
+        }
+        .uiux-project-links a.secondary {
+            background: var(--uiux-accent);
+        }
+        .uiux-project-links a:hover {
+            opacity: 0.9;
+        }
+
+        /* --- Footer --- */
+        .uiux-footer {
+            background: var(--uiux-primary);
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+            box-shadow: 0 -2px 10px var(--uiux-shadow);
+        }
+        .uiux-footer .social-links a {
+            color: var(--uiux-secondary);
+            font-size: 1.2em;
+            margin: 0 15px;
+        }
+        .uiux-footer .social-links a:hover {
+            color: var(--uiux-accent);
+            transform: translateY(-3px);
+        }
+        .uiux-footer p {
+            margin-top: 20px;
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+
+        /* --- Responsiveness --- */
+        @media (max-width: 768px) {
+            .uiux-nav .nav-content {
+                flex-direction: column;
+            }
+            .uiux-nav ul {
+                margin-top: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .uiux-nav ul li a {
+                margin: 5px 10px;
+            }
+            .uiux-header h1 {
+                font-size: 2.8em;
+            }
+            .uiux-header h2 {
+                font-size: 1.5em;
+            }
+            .section-title {
+                font-size: 2.2em;
+            }
+            .uiux-skills-grid, .uiux-project-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        @media (max-width: 480px) {
+            .uiux-header h1 {
+                font-size: 2.2em;
+            }
+            .profile-img-container img {
+                width: 140px;
+                height: 140px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="uiux-nav">
+        <div class="container nav-content">
+            <div class="logo">Emeka's UI/UX</div>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header id="about" class="uiux-header">
+        <div class="content-wrapper container">
+            <div class="profile-img-container">
+                <img src="https://techorbitjobs.com/wp-content/uploads/2025/10/testimonial-7.webp" alt="Emeka Uchenna Profile Picture">
+            </div>
+            
+            <div id="dynamicGreeting" style="font-family: 'Montserrat', sans-serif;"></div>
+            
+            <h1>I'm Emeka Uchenna</h1>
+            <h2>🎨 Crafting Intuitive & Delightful User Experiences</h2>
+            <p>Passionate UI/UX Designer with a strong focus on user research, Skilled in Figma, Adobe XD, usability testing, and responsive UI frameworks. Proven success
+collaborating with product, marketing, and engineering teams to design conversion-driven
+interfaces for SaaS, eCommerce, and mobile applications. Dedicated to scalable design
+systems, accessibility, and human-centered product strategy.wireframing, prototyping, and creating visually appealing interfaces that solve real-world problems and enhance user engagement.</p>
+            <a href="https://drive.google.com/uc?export=download&id=1cXhbJYjxLPvtrYLY02XaX7C_WoO1oqGI" class="uiux-btn" download>View Resume</a>
+        </div>
+    </header>
+
+    <section id="skills" class="uiux-section">
+        <div class="container">
+            <h2 class="section-title">My Design Toolkit</h2>
+            <div class="uiux-skills-grid">
+                <div class="uiux-skill-card">
+                    <h3>Design Tools</h3>
+                    <ul>
+                        <li>Figma, Sketch, Adobe XD</li>
+                        <li>Adobe Photoshop, Illustrator</li>
+                        <li>Miro (Collaborative Whiteboard)</li>
+                    </ul>
+                </div>
+                <div class="uiux-skill-card">
+                    <h3>UX Methodologies</h3>
+                    <ul>
+                        <li>User Research & Interviews</li>
+                        <li>Persona & Journey Mapping</li>
+                        <li>Information Architecture</li>
+                        <li>Usability Testing</li>
+                    </ul>
+                </div>
+                <div class="uiux-skill-card">
+                    <h3>UI & Interaction</h3>
+                    <ul>
+                        <li>Wireframing & Prototyping</li>
+                        <li>Interaction Design (Animations)</li>
+                        <li>Design Systems</li>
+                        <li>Responsive Design</li>
+                    </ul>
+                </div>
+                <div class="uiux-skill-card">
+                    <h3>Core Skills</h3>
+                    <ul>
+                        <li>User-Centered Design (UCD)</li>
+                        <li>Accessibility (WCAG)</li>
+                        <li>Design Thinking</li>
+                        <li>A/B Testing</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="uiux-section uiux-projects-section">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="uiux-project-grid">
+                <div class="uiux-project-card">
+                    <img src="ui ux app.png" alt="Mobile App Redesign Project">
+                    <div class="uiux-project-content">
+                        <h3>Mobile App Redesign: Enhanced User Flow</h3>
+                        <p>Led the redesign of a banking mobile application, improving navigation and simplifying complex transaction flows. Achieved a 20% increase in task completion rates in usability tests.</p>
+                        <div class="uiux-project-links">
+                            <a href="[Link to Figma Prototype]" target="_blank">View Prototype</a>
+                            <a href="[Link to Case Study PDF]" target="_blank" class="secondary">Case Study</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="uiux-project-card">
+                    <img src="UI UX Mobile App picture.png" alt="E-commerce Platform Project">
+                    <div class="uiux-project-content">
+                        <h3>E-commerce Platform: Personalization Features</h3>
+                        <p>Designed and implemented a new personalized recommendation engine for an e-commerce website, resulting in a 15% uplift in conversion rates based on A/B testing.</p>
+                        <div class="uiux-project-links">
+                            <a href="[Link to Behance/Dribbble]" target="_blank">View on Behance</a>
+                            <a href="[Link to User Flows]" target="_blank" class="secondary">User Flows</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="uiux-project-card">
+                    <img src="SaaS dashboard picture.png" alt="SaaS Dashboard Project">
+                    <div class="uiux-project-content">
+                        <h3>SaaS Dashboard: Data Visualization & Reporting</h3>
+                        <p>Developed an intuitive dashboard for a B2B SaaS product, focusing on clear data visualization and custom reporting features. Reduced customer support inquiries related to data interpretation by 30%.</p>
+                        <div class="uiux-project-links">
+                            <a href="[Link to Interactive Mockup]" target="_blank">View Mockup</a>
+                            <a href="[Link to Research Report]" target="_blank" class="secondary">Research Report</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer id="contact" class="uiux-footer">
+        <div class="container">
+            <div class="social-links">
+                <a href="[LinkedIn URL]" target="_blank">LinkedIn</a> | 
+                <a href="[Dribbble URL]" target="_blank">Dribbble</a> | 
+                <a href="[Behance URL]" target="_blank">Behance</a> | 
+                <a href="mailto:emeka.uchenna@example.com">Email</a>
+            </div>
+            <p>&copy; 2025 Emeka Uchenna. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const greetingElement = document.getElementById('dynamicGreeting');
+            const date = new Date();
+            const hour = date.getHours();
+            let greeting;
+
+            if (hour < 12) {
+                greeting = 'Good morning!';
+            } else if (hour < 18) {
+                greeting = 'Good afternoon!';
+            } else {
+                greeting = 'Good evening!';
+            }
+
+            if (greetingElement) {
+                greetingElement.textContent = greeting + ' Welcome to my portfolio,';
+            }
+        });
+    </script>
+</body>
+</html>
